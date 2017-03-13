@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"scripts": {
+		"test": "eslint . && mocha *.spec.js"
+	},
+	"dependencies": {
+		"eslint": "3.7.0",
+		"mocha": "3.1.0"
+	}
+}
