@@ -3,22 +3,30 @@
 const assert = require('assert');
 const substringAlgorithms = require('./lib/substring');
 
-describe('substringAlgorithms.countEntries()', () => {
-    it('finds substring entries count', () => {
-        assert.strictEqual(substringAlgorithms.countEntries('abracadabra', 'abra'), 2);
-    });
+/**
+ * Starting testing tools.
+ * @param {Func} searchingFunc
+ */
+function checkSearcing(searchingFunc) {
+    it('finds substring entries count', () =>
+        assert.strictEqual(searchingFunc('abracadabra', 'abra'), 2)
+    );
 
-    it('returns 0 if there was no entry', () => {
-        assert.strictEqual(substringAlgorithms.countEntries('umbrella', 'alice'), 0);
-    });
+    it('returns 0 if there was no entry', () =>
+        assert.strictEqual(searchingFunc('umbrella', 'alice'), 0)
+    );
 
-    it('returns 0 in case of empty text', () => {
-        assert.strictEqual(substringAlgorithms.countEntries('', ''), 0);
-    });
+    it('returns 0 in case of empty text', () =>
+        assert.strictEqual(searchingFunc('', ''), 0)
+    );
 
     it('throws exception if text is shorter than sample', () => {
-        const cb = () => substringAlgorithms.countEntries('1', '123');
+        const cb = () => searchingFunc('1', '123');
 
         assert.throws(cb, /Text length is less than sample length/);
     });
-});
+}
+
+describe('substringAlgorithms.countEntries()', substringAlgorithms.countEntries);
+
+describe('substringAlgorithms.boyerMooreSearch()', substringAlgorithms.boyerMooreSearch);
