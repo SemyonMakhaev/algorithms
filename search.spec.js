@@ -42,7 +42,7 @@ describe('search.binarySearchFirstEntry()', () =>
     checkFirstEntry(search.binarySearchFirstEntry)
 );
 
-describe('Binary search: first entry (recoursive)', () =>
+describe('search.binarySearchFirstEntryRecoursive()', () =>
     checkFirstEntry(search.binarySearchFirstEntryRecoursive)
 );
 
@@ -159,6 +159,6 @@ describe('search.binarySearchRightBorder()', () =>
     checkRightBorder(search.binarySearchRightBorder)
 );
 
-describe('Binary search: right border (recoursive)', function() {
+describe('search.binarySearchRightBorderRecoursive()', function() {
     checkRightBorder(search.binarySearchRightBorderRecoursive);
 });
