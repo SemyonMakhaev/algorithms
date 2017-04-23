@@ -12,7 +12,8 @@ This is a library of some algorithms realizations for node.js
 3. Hoare sort
 
 #### Substring searching algorithm
-Using hash-function
+1. Using hash-function
+2. Boyer-Moore algorithm
 
 #### Rotate Polish Notation algorithm
 Computes an expression by RPN
