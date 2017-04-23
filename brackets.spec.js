@@ -1,18 +1,18 @@
 'use strict';
 
-var assert = require('assert');
-var isCorrect = require('./production/brackets');
+const assert = require('assert');
+const isCorrect = require('./lib/brackets');
 
-describe('Correct brackets sequence determining', function () {
-    it('returns true if brackets sequence is correct', function () {
+describe('isCorrect()', () => {
+    it('returns true if brackets sequence is correct', () => {
         assert(isCorrect('(())[]'));
     });
 
-    it('returns false for incorrect brackets sequence', function () {
+    it('returns false for incorrect brackets sequence', () => {
         assert(!isCorrect('())('));
     });
 
-    it('returns true for empty string', function () {
+    it('returns true for empty string', () => {
         assert(isCorrect(''));
     });
 });

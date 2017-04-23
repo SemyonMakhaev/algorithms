@@ -1,24 +1,24 @@
 'use strict';
 
-var assert = require('assert');
-var countEntries = require('./production/substring');
+const assert = require('assert');
+const substringAlgorithms = require('./lib/substring');
 
-describe('Substring searching using hash function', function () {
-    it('finds substring entries count', function () {
-        assert.strictEqual(countEntries('abracadabra', 'abra'), 2);
+describe('substringAlgorithms.countEntries()', () => {
+    it('finds substring entries count', () => {
+        assert.strictEqual(substringAlgorithms.countEntries('abracadabra', 'abra'), 2);
     });
 
-    it('returns 0 if there was no entry', function () {
-        assert.strictEqual(countEntries('umbrella', 'alice'), 0);
+    it('returns 0 if there was no entry', () => {
+        assert.strictEqual(substringAlgorithms.countEntries('umbrella', 'alice'), 0);
     });
 
-    it('returns 0 in case of empty text', function () {
-        assert.strictEqual(countEntries('', ''), 0);
+    it('returns 0 in case of empty text', () => {
+        assert.strictEqual(substringAlgorithms.countEntries('', ''), 0);
     });
 
-    it('throws exception if text is shorter than sample', function () {
-        assert.throws(function () {
-            countEntries('1', '123');
-        }, Error);
+    it('throws exception if text is shorter than sample', () => {
+        const cb = () => substringAlgorithms.countEntries('1', '123');
+
+        assert.throws(cb, /Text length is less than sample length/);
     });
 });

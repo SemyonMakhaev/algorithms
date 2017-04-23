@@ -1,10 +1,17 @@
 {
-	"private": true,
-	"scripts": {
-		"test": "eslint . && mocha *.spec.js"
-	},
-	"dependencies": {
-		"eslint": "3.7.0",
-		"mocha": "3.1.0"
-	}
+  "name": "alghoritms",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "eslint . && mocha *.spec.js",
+    "lint": "eslint .",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha *.spec.js --report text-summary"
+  },
+  "author": "Semen Makhaev <semenmakhaev@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "3.7.0",
+    "mocha": "3.1.0",
+    "istanbul": "^0.4.5"
+  }
 }

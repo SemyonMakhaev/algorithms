@@ -1,20 +1,19 @@
 'use strict';
 
-var assert = require('assert');
-var compute = require('./production/rpn');
+const assert = require('assert');
+const compute = require('./lib/rpn');
 
-describe('Rotate polish notation', function () {
-    it('computes postfix expression', function () {
+describe('compute()', () => {
+    it('computes postfix expression', () => {
         assert.strictEqual(compute('32-4*'), 4);
     });
 
-    it('returns 0 for empty string', function () {
+    it('returns 0 for empty string', () => {
         assert.strictEqual(compute(''), 0);
     });
 
-    it('throws SyntaxError for incorrect input', function () {
-        assert.throws(function () {
-            compute('2++');
-        }, SyntaxError);
+    it('throws SyntaxError for incorrect input', () => {
+        const cb = () => compute('2++');
+        assert.throws(cb, SyntaxError);
     });
 });
